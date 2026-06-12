@@ -67,7 +67,7 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "SELECT departure_city, arrival_city FROM flight WHERE flight_ID = ?";
+            String sql = "SELECT* FROM flight WHERE flight_ID = ?";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 
