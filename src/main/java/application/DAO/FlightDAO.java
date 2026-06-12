@@ -19,8 +19,6 @@ import java.util.List;
  */
 public class FlightDAO {
 
-
-
     /**
      * TODO: Retrieve all flights from the flight table.
      *
@@ -34,10 +32,10 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT* FROM flight";
+            String sql = "SELECT * FROM flight";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-           // preparedStatement.setString(1, );
-
+           
+            //preparedStatement.setString(3, getArrival_city);
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 Flight flight = new Flight(rs.getInt("flight_id"), rs.getString("departure_city"),
