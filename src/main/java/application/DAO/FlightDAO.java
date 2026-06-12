@@ -26,6 +26,7 @@ public class FlightDAO {
      *
      * You only need to change the sql String and set preparedStatement parameters.
      *
+     * 
      * @return all flights.
      */
     public List<Flight> getAllFlights(){
@@ -33,7 +34,7 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "change me";
+            String sql = "SELECT* FROM flight";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
@@ -66,10 +67,11 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "change me";
+            String sql = "SELECT* FROM flight WHERE flight_ID = ?";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
+                preparedStatement.setInt(1, id);
             //write preparedStatement's setString and setInt methods here.
 
             ResultSet rs = preparedStatement.executeQuery();
