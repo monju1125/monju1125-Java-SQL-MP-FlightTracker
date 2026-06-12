@@ -109,7 +109,7 @@ public class FlightDAO {
         try {
             //Write SQL logic here. When inserting, you only need to define the departure_city and arrival_city
             //values (two columns total!)
-            String sql = "INSERT INTO flight(departure_city, arrival_city) VALUES(?,?)";
+            String sql = "INSERT INTO flight(departure_city, arrival_city) VALUES(?,?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             //write preparedStatement's setString and setInt methods here.
@@ -149,7 +149,7 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "UPDATE flight set departure_city = ?, arrival_city = ? WHERE flight_id = ?";
+            String sql = "UPDATE flight set departure_city = ?, arrival_city = ? WHERE flight_id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             //write PreparedStatement setString and setInt methods here.
@@ -185,7 +185,7 @@ public class FlightDAO {
         List<Flight> flights = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT * FROM flight WHERE departure_city = ? AND arrival_city = ?";
+            String sql = "SELECT * FROM flight WHERE departure_city = ? AND arrival_city = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             //write PreparedStatement setString and setInt methods here.
