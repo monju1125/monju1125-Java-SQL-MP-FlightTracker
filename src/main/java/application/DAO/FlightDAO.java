@@ -37,10 +37,10 @@ public class FlightDAO {
             String sql = "SELECT* FROM flight";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, flights.toString());
-            preparedStatement.setString(2, flights.toString());
-            preparedStatement.setString(3, flights.toString());
-            
+            //preparedStatement.setString(1, flights.toString());
+            //preparedStatement.setString(2, flights.toString());
+            //preparedStatement.setString(3, flights.toString());
+
 
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
