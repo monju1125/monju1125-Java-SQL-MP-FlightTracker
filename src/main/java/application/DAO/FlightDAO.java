@@ -155,8 +155,8 @@ public class FlightDAO {
 
             //write PreparedStatement setString and setInt methods here.
             preparedStatement.setInt(1, flight.getFlight_id());
-            preparedStatement.setString(2, flight.departure_city);
-            preparedStatement.setString(3, flight.arrival_city);
+            preparedStatement.setString(2, flight.getDeparture_city());
+            preparedStatement.setString(3, flight.getArrival_city());
 
             preparedStatement.executeUpdate();
         }catch(SQLException e){
