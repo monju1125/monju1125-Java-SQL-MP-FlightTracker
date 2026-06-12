@@ -67,10 +67,10 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            String sql = "SELECT* FROM flight WHERE flight_ID = ?";
+            String sql = "SELECT flight.departure_city, flight.arrival_city FROM flight WHERE flight_ID = ?";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
+                
                 preparedStatement.setInt(1, id);
             //write preparedStatement's setString and setInt methods here.
 
