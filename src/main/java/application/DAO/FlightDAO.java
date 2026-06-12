@@ -34,7 +34,7 @@ public class FlightDAO {
             //Write SQL logic here
             String sql = "SELECT * FROM flight";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-           
+           //preparedStatement.setString(1, getAllFlights());
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 Flight flight = new Flight(rs.getInt("flight_id"), rs.getString("departure_city"),
